@@ -1,0 +1,153 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.calculator {
+  width: 340px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.display {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  padding: 20px 24px 16px;
+  margin-bottom: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.expression {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  min-height: 20px;
+  margin-bottom: 6px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.current {
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  height: 64px;
+  border: none;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.15s ease;
+  border-radius: inherit;
+}
+
+.btn:hover::after {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn:active::after {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.numberBtn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.functionBtn {
+  background: rgba(180, 180, 200, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.operatorBtn {
+  background: linear-gradient(145deg, #f97316, #ea580c);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.4);
+}
+
+.equalsBtn {
+  background: linear-gradient(145deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+}
+
+.zeroBtn {
+  flex: 2;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .current {
+    font-size: 36px;
+  }
+
+  .btn {
+    height: 56px;
+    font-size: 18px;
+    border-radius: 14px;
+  }
+}
